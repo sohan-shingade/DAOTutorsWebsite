@@ -1,13 +1,34 @@
 import React from "react";
 import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
-import HoverableView from "./HoverableView";
 import HoverableText from "./HoverableText";
+import {
+  Menu,
+  MenuProvider,
+  MenuOptions,
+  MenuOption,
+  MenuTrigger,
+} from "react-native-popup-menu";
 
+const DAOHeaderLink = (props) => (
+  <TouchableOpacity style={styles.aboutUsNoHoverView} onPress={props.pressed()}>
+    <HoverableText style={styles.aboutUsNoHover} onHover={styles.aboutUsHover}>
+      {props.text}
+    </HoverableText>
+  </TouchableOpacity>
+);
 const DAOlogoheader = () => (
   <Image
     style={styles.daologoheader}
     source={require("./assets/img/DAOtutorlogotest3.png")}
   />
+);
+const UserImgHeader = () => (
+  <View style={styles.userImgHeaderView}>
+    <Image
+      style={styles.userImgHeader}
+      source={require("./assets/img/bx-user-circle.svg")}
+    />
+  </View>
 );
 class TopView extends React.Component {
   constructor(props) {
@@ -18,67 +39,73 @@ class TopView extends React.Component {
     };
     this.aboutUsPressed = this.aboutUsPressed.bind(this);
   }
-  aboutUsPressed = () => {
+  aboutUsPressed() {
     console.log("about us");
-  };
-  tutoringPressed = () => {
+  }
+  tutoringPressed() {
     console.log("tutoring");
-  };
-  contactUsPressed = () => {
+  }
+  contactUsPressed() {
     console.log("contact us");
-  };
+  }
 
   render() {
     return (
-      <View style={styles.topInfo}>
-        <View style={styles.daotutortitle}>
-          <DAOlogoheader />
-          <Text style={styles.daotutorstext}>DAO Tutors</Text>
+      <MenuProvider>
+        <View style={styles.topInfo}>
+          <View style={styles.daotutortitle}>
+            <DAOlogoheader />
+            <Text style={styles.daotutorstext}>DAO Tutors</Text>
+          </View>
+          <View style={styles.daoheadempty} />
+          <View style={styles.daoheaderlinks}>
+            <DAOHeaderLink
+              text={"About us"}
+              pressed={() => this.aboutUsPressed}
+            />
+
+            <DAOHeaderLink
+              text={"Tutoring"}
+              pressed={() => this.tutoringPressed}
+            />
+
+            <DAOHeaderLink
+              text={"Contact Us"}
+              pressed={() => this.contactUsPressed}
+            />
+            <View style={styles.userImgHeaderView}>
+              <Menu
+                name="menu"
+                onSelect={(value) => alert(`Selected number: ${value}`)}
+              >
+                <MenuTrigger customStyles={triggerStyles}>
+                  <UserImgHeader />
+                </MenuTrigger>
+                <MenuOptions
+                  optionsContainerStyle={{ marginTop: 40, width: 80 }}
+                >
+                  <MenuOption value={1} text="My Account" />
+                  <MenuOption value={2}>
+                    <Text style={{ color: "red" }}></Text>
+                  </MenuOption>
+                  <MenuOption value={3} disabled={true} text="Three" />
+                </MenuOptions>
+              </Menu>
+            </View>
+          </View>
         </View>
-        <View style={styles.daoheadempty} />
-        <View style={styles.daoheaderlinks}>
-          <TouchableOpacity
-            style={styles.aboutUsNoHoverView}
-            onPress={this.aboutUsPressed}
-          >
-            <HoverableText
-              style={styles.aboutUsNoHover}
-              onHover={styles.aboutUsHover}
-            >
-              About Us
-            </HoverableText>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={styles.aboutUsNoHoverView}
-            onPress={this.tutoringPressed}
-          >
-            <HoverableText
-              style={styles.aboutUsNoHover}
-              onHover={styles.aboutUsHover}
-            >
-              Tutoring
-            </HoverableText>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={styles.aboutUsNoHoverView}
-            onPress={this.contactUsPressed}
-          >
-            <HoverableText
-              style={styles.aboutUsNoHover}
-              onHover={styles.aboutUsHover}
-            >
-              Contact Us
-            </HoverableText>
-          </TouchableOpacity>
-
-          <View style={{ flex: 1 }} />
-        </View>
-      </View>
+      </MenuProvider>
     );
   }
 }
+
+const triggerStyles = {
+  triggerOuterWrapper: {
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1,
+  },
+};
 
 const styles = StyleSheet.create({
   topInfo: {
@@ -101,6 +128,16 @@ const styles = StyleSheet.create({
   daoheaderlinks: {
     flex: 4,
     flexDirection: "row",
+  },
+  userImgHeaderView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  userImgHeader: {
+    width: 40,
+    height: 40,
+    color: "white",
   },
   aboutUsHover: {
     fontFamily: "Manrope-Medium",
