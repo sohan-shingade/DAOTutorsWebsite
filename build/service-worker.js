@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/DAOTutorsWebsite/precache-manifest.879fc07020db5c25845414c948c9482b.js"
+  "/DAOTutorsWebsite/precache-manifest.df713fb6a9589b7dc8347f301fe40b3b.js"
 );
 
 self.addEventListener('message', (event) => {
