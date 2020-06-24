@@ -3,7 +3,6 @@ import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
 import HoverableText from "./HoverableText";
 import {
   Menu,
-  MenuProvider,
   MenuOptions,
   MenuOption,
   MenuTrigger,
@@ -30,6 +29,7 @@ const UserImgHeader = () => (
     />
   </View>
 );
+
 class TopView extends React.Component {
   constructor(props) {
     super(props);
@@ -51,7 +51,7 @@ class TopView extends React.Component {
 
   render() {
     return (
-      <MenuProvider>
+      <View style={{ height: 100 }}>
         <View style={styles.topInfo}>
           <View style={styles.daotutortitle}>
             <DAOlogoheader />
@@ -94,7 +94,7 @@ class TopView extends React.Component {
             </View>
           </View>
         </View>
-      </MenuProvider>
+      </View>
     );
   }
 }
@@ -104,10 +104,19 @@ const triggerStyles = {
     alignItems: "center",
     justifyContent: "center",
     flex: 1,
+    height: 100,
   },
 };
 
 const styles = StyleSheet.create({
+  container: {
+    height: 100,
+    flex: 0,
+  },
+  backdrop: {
+    height: 100,
+    flex: 0,
+  },
   topInfo: {
     height: 100,
     justifyContent: "flex-start",
