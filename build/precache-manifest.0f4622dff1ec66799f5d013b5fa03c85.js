@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "372cbc12602ab9fba8b6440dee695579",
+    "revision": "8fe9870c015aa232c923a795ce045b65",
     "url": "/DAOTutorsWebsite/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/DAOTutorsWebsite/static/js/2.73501c13.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f317b86dbcb8e3b648f7",
-    "url": "/DAOTutorsWebsite/static/js/main.0be5ed90.chunk.js"
+    "revision": "e88bba5e40602b7bc7ca",
+    "url": "/DAOTutorsWebsite/static/js/main.36e09b15.chunk.js"
   },
   {
     "revision": "ae8a19f4e278eaf30ea7",
