@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#764ABC",
   },
   aboutUsText: {
-    fontFamily: "Manrope-SemiBold",
+    fontFamily: "Manrope",
+    fontWeight: 600,
     fontSize: 40,
     width: Dimensions.get("window").width / 2,
     padding: 50,
@@ -42,7 +43,8 @@ const styles = StyleSheet.create({
     alignSelf: "flex-end",
   },
   titleText: {
-    fontFamily: "Manrope-ExtraBold",
+    fontFamily: "Manrope",
+    fontWeight: 800,
     fontSize: 60,
     paddingLeft: 50,
     paddingTop: 30,

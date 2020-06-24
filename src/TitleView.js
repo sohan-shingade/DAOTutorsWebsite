@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
     alignSelf: "flex-end",
   },
   titleText: {
-    fontFamily: "Manrope-ExtraBold",
+    fontFamily: "Manrope",
+    fontWeight: 800,
     fontSize: 60,
     paddingLeft: 50,
     paddingTop: 30,

@@ -149,7 +149,8 @@ const styles = StyleSheet.create({
     color: "white",
   },
   aboutUsHover: {
-    fontFamily: "Manrope-Medium",
+    fontFamily: "Manrope",
+    fontWeight: 500,
     fontSize: 20,
     color: "#dad5ff",
     //backgroundColor: "white",
@@ -160,7 +161,8 @@ const styles = StyleSheet.create({
     //flex: 1,
   },
   aboutUsNoHover: {
-    fontFamily: "Manrope-Medium",
+    fontFamily: "Manrope",
+    fontWeight: 500,
     fontSize: 20,
     color: "white",
     //backgroundColor: "transparent",
@@ -173,7 +175,8 @@ const styles = StyleSheet.create({
 
   daotutorstext: {
     paddingLeft: 70,
-    fontFamily: "Manrope-ExtraBold",
+    fontFamily: "Manrope",
+    fontWeight: 800,
     fontSize: 40,
     color: "white",
     alignSelf: "center",
