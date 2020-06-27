@@ -1,11 +1,21 @@
 import React, { Component } from "react";
-import { StyleSheet, View, ScrollView } from "react-native";
+import { View, ScrollView, Platform } from "react-native";
 import TopView from "./topView";
 import TitleView from "./TitleView";
 import AboutView from "./AboutView";
 import { MenuProvider, Menu } from "react-native-popup-menu";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    console.log(Platform.OS);
+  }
+
+  returnLayout = (layout) => {
+    this.aboutUsY = layout.y;
+  };
+
   render() {
     return (
       <MenuProvider>
@@ -13,11 +23,14 @@ class App extends Component {
           name="menu"
           onSelect={(value) => alert(`Selected number: ${value}`)}
         >
-          <TopView />
-          <ScrollView style={{ maxHeight: 200000000, height: 1000 }}>
+          <TopView aboutUsMove={this.moveToAboutUs} />
+          <ScrollView
+            style={{ maxHeight: 200000000, height: 1000 }}
+            ref={this._setRef}
+          >
             <View>
               <TitleView />
-              <AboutView />
+              <AboutView returnLayout={this.returnLayout} />
             </View>
             <View style={{ height: 1000000, backgroundColor: "orange" }} />
           </ScrollView>
@@ -25,13 +38,14 @@ class App extends Component {
       </MenuProvider>
     );
   }
-}
+  _setRef = (ref) => {
+    this.scrollRef = ref;
+  };
 
-const styles = StyleSheet.create({
-  /*app: {
-    flex: 1,
-    backgroundColor: "white",
-  },*/
-});
+  moveToAboutUs = () => {
+    console.log("BEANS");
+    this.scrollRef.scrollTo({ y: this.aboutUsY, animated: true });
+  };
+}
 
 export default App;

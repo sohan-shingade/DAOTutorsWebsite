@@ -1,5 +1,12 @@
 import React from "react";
-import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  Dimensions,
+} from "react-native";
 import HoverableText from "./HoverableText";
 import {
   Menu,
@@ -8,8 +15,11 @@ import {
   MenuTrigger,
 } from "react-native-popup-menu";
 
+const windowwidth = Dimensions.get("window").width;
+const windowheight = Dimensions.get("window").height;
+
 const DAOHeaderLink = (props) => (
-  <TouchableOpacity style={styles.aboutUsNoHoverView} onPress={props.pressed()}>
+  <TouchableOpacity style={styles.aboutUsNoHoverView} onPress={props.onPress}>
     <HoverableText style={styles.aboutUsNoHover} onHover={styles.aboutUsHover}>
       {props.text}
     </HoverableText>
@@ -37,7 +47,7 @@ class TopView extends React.Component {
       ishover: false,
       thiscolor: "black",
     };
-    this.aboutUsPressed = this.aboutUsPressed.bind(this);
+    //this.aboutUsPressed = this.aboutUsPressed.bind(this);
   }
   aboutUsPressed() {
     console.log("about us");
@@ -50,6 +60,7 @@ class TopView extends React.Component {
   }
 
   render() {
+    const { aboutUsMove } = this.props;
     return (
       <View style={{ height: 100 }}>
         <View style={styles.topInfo}>
@@ -57,12 +68,9 @@ class TopView extends React.Component {
             <DAOlogoheader />
             <Text style={styles.daotutorstext}>DAO Tutors</Text>
           </View>
-          <View style={styles.daoheadempty} />
+          {/* <View style={styles.empty} /> */}
           <View style={styles.daoheaderlinks}>
-            <DAOHeaderLink
-              text={"About us"}
-              pressed={() => this.aboutUsPressed}
-            />
+            <DAOHeaderLink text={"About us"} onPress={aboutUsMove} />
 
             <DAOHeaderLink
               text={"Tutoring"}
@@ -113,6 +121,9 @@ const styles = StyleSheet.create({
     height: 100,
     flex: 0,
   },
+  empty: {
+    flex: 1,
+  },
   backdrop: {
     height: 100,
     flex: 0,
@@ -129,11 +140,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
 
-    flex: 4,
+    flex: 3,
   },
-  daoheadempty: {
-    flex: 2,
-  },
+
   daoheaderlinks: {
     flex: 4,
     flexDirection: "row",
@@ -144,8 +153,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   userImgHeader: {
-    width: 40,
-    height: 40,
+    width: windowwidth / 35,
+    height: windowwidth / 35,
     color: "white",
   },
   aboutUsHover: {
@@ -163,7 +172,7 @@ const styles = StyleSheet.create({
   aboutUsNoHover: {
     fontFamily: "Manrope",
     fontWeight: 500,
-    fontSize: 20,
+    fontSize: 0.02 * windowwidth,
     color: "white",
     //backgroundColor: "transparent",
     textAlign: "center",
@@ -174,17 +183,17 @@ const styles = StyleSheet.create({
   },
 
   daotutorstext: {
-    paddingLeft: 70,
+    paddingLeft: windowwidth / 15,
     fontFamily: "Manrope",
     fontWeight: 800,
-    fontSize: 40,
+    fontSize: 0.046 * windowwidth,
     color: "white",
     alignSelf: "center",
   },
   daologoheader: {
-    left: 50,
-    height: 70,
-    width: 70,
+    left: windowwidth / 20,
+    height: windowheight / 10,
+    width: windowheight / 10,
     alignSelf: "center",
   },
   aboutUsHoverView: {
