@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b54983edd452dfa07ef0ba639b228d97",
+    "revision": "944f58fb217b8d772d2e82f69bdc4cdf",
     "url": "/DAOTutorsWebsite/index.html"
   },
   {
-    "revision": "9eb565bd0f47df74c29d",
-    "url": "/DAOTutorsWebsite/static/js/2.73501c13.chunk.js"
+    "revision": "d67045479e5a6f4efc29",
+    "url": "/DAOTutorsWebsite/static/js/2.57551c48.chunk.js"
   },
   {
     "revision": "cd6b660f9b77f06aa09592c7b60ec6d1",
-    "url": "/DAOTutorsWebsite/static/js/2.73501c13.chunk.js.LICENSE.txt"
+    "url": "/DAOTutorsWebsite/static/js/2.57551c48.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b9d69fe8444dfbde772a",
-    "url": "/DAOTutorsWebsite/static/js/main.d07dc059.chunk.js"
+    "revision": "3deb66bced2822b266c6",
+    "url": "/DAOTutorsWebsite/static/js/main.289df2ce.chunk.js"
   },
   {
     "revision": "ae8a19f4e278eaf30ea7",
@@ -32,7 +32,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/DAOTutorsWebsite/static/media/example-scene-1.aac0b32f.svg"
   },
   {
-    "revision": "b1797edfa3d02fac334f0cf30d319279",
-    "url": "/DAOTutorsWebsite/static/media/scene-one.b1797edf.png"
+    "revision": "81d43a70c1d1a5897733eeaa3920d495",
+    "url": "/DAOTutorsWebsite/static/media/scene-one.81d43a70.svg"
   }
 ]);
