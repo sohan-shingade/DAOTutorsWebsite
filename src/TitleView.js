@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     margin: 25,
     padding: 25,
 
-    backgroundColor: "#e1e1e1",
+    backgroundColor: "white",
   },
   img: {
     width: Dimensions.get("window").width / 2,

@@ -60,7 +60,7 @@ class TopView extends React.Component {
   }
 
   render() {
-    const { aboutUsMove } = this.props;
+    // const { aboutUsMove, tutorMove } = this.props;
     return (
       <View style={{ height: 100 }}>
         <View style={styles.topInfo}>
@@ -70,16 +70,13 @@ class TopView extends React.Component {
           </View>
           {/* <View style={styles.empty} /> */}
           <View style={styles.daoheaderlinks}>
-            <DAOHeaderLink text={"About us"} onPress={aboutUsMove} />
+            <DAOHeaderLink text={"About us"} onPress={this.props.aboutUsMove} />
 
-            <DAOHeaderLink
-              text={"Tutoring"}
-              pressed={() => this.tutoringPressed}
-            />
+            <DAOHeaderLink text={"Tutoring"} onPress={this.props.tutorMove} />
 
             <DAOHeaderLink
               text={"Contact Us"}
-              pressed={() => this.contactUsPressed}
+              onPress={() => this.contactUsPressed}
             />
             <View style={styles.userImgHeaderView}>
               <Menu
@@ -153,8 +150,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   userImgHeader: {
-    width: windowwidth / 35,
-    height: windowwidth / 35,
+    width: windowwidth / 30,
+    height: windowwidth / 30,
     color: "white",
   },
   aboutUsHover: {
