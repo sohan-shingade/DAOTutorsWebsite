@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.js": "/static/js/main.d34c7540.chunk.js",
+    "main.js.map": "/static/js/main.d34c7540.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6f084851.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6f084851.js.map",
+    "static/js/2.2270089a.chunk.js": "/static/js/2.2270089a.chunk.js",
+    "static/js/2.2270089a.chunk.js.map": "/static/js/2.2270089a.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.5630837b76fc37812bb4264845391202.js": "/precache-manifest.5630837b76fc37812bb4264845391202.js",
+    "service-worker.js": "/service-worker.js",
+    "static/js/2.2270089a.chunk.js.LICENSE.txt": "/static/js/2.2270089a.chunk.js.LICENSE.txt",
+    "static/media/DAOtutorlogotest3.png": "/static/media/DAOtutorlogotest3.960b99b0.png",
+    "static/media/Headshot-Placeholder-1.png": "/static/media/Headshot-Placeholder-1.0bf58ad9.png",
+    "static/media/example-scene-1.svg": "/static/media/example-scene-1.aac0b32f.svg",
+    "static/media/scene-four.svg": "/static/media/scene-four.c125a6e2.svg",
+    "static/media/scene-one.svg": "/static/media/scene-one.81d43a70.svg",
+    "static/media/scene-three.svg": "/static/media/scene-three.f7a9935a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6f084851.js",
+    "static/js/2.2270089a.chunk.js",
+    "static/js/main.d34c7540.chunk.js"
+  ]
+}
