@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, Dimensions } from "react-native";
 
-export default class TutorView extends React.Component {
+export default class ContactUsView extends React.Component {
   static returnLayout() {
     console.log("returning Layout");
     return this.aboutUsLayout.y;
@@ -16,14 +16,11 @@ export default class TutorView extends React.Component {
         }}
         style={styles.titleView}
       >
-        <Text style={styles.titleText}>How We Work</Text>
-        <Text style={styles.aboutUsText}>
-          We send you tutoring sessions and topics and you can register to join
-          any of the classes.
-        </Text>
+        <Text style={styles.titleText}>Contact Us!</Text>
+        <Text style={styles.aboutUsText}>Email: DAOTutors@gmail.com</Text>
         <Image
           style={styles.img}
-          source={require("./assets/img/scene-three.svg")}
+          source={require("./assets/img/scene-four.svg")}
         />
       </View>
     );
@@ -35,7 +32,7 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 25,
     padding: 25,
-    backgroundColor: "#764ABC",
+    backgroundColor: "white",
     borderRadius: 50,
   },
   aboutUsText: {
@@ -46,12 +43,12 @@ const styles = StyleSheet.create({
     //padding: Dimensions.get("window").width / 35,
     paddingLeft: Dimensions.get("window").width / 35,
     paddingTop: Dimensions.get("window").width / 35,
-    color: "white",
+    color: "#764ABC",
   },
   img: {
     width: Dimensions.get("window").width / 2.3,
-    height: ((Dimensions.get("window").width / 2.3) * 773) / 917.05,
-    aspectRatio: 917.05 / 773,
+    height: ((Dimensions.get("window").width / 2.3) * 773) / 776,
+    aspectRatio: 776 / 773,
     marginLeft: Dimensions.get("window").width / 30,
     marginBottom: Dimensions.get("window").width / 30,
     //marginTop: Dimensions.get("window").height / 10,
@@ -64,6 +61,6 @@ const styles = StyleSheet.create({
     paddingLeft: Dimensions.get("window").width / 35,
     paddingTop: Dimensions.get("window").width / 35,
     width: (Dimensions.get("window").width * 2) / 3,
-    color: "white",
+    color: "#764ABC",
   },
 });

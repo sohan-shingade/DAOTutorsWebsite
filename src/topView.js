@@ -8,12 +8,6 @@ import {
   Dimensions,
 } from "react-native";
 import HoverableText from "./HoverableText";
-import {
-  Menu,
-  MenuOptions,
-  MenuOption,
-  MenuTrigger,
-} from "react-native-popup-menu";
 
 const windowwidth = Dimensions.get("window").width;
 const windowheight = Dimensions.get("window").height;
@@ -30,14 +24,6 @@ const DAOlogoheader = () => (
     style={styles.daologoheader}
     source={require("./assets/img/DAOtutorlogotest3.png")}
   />
-);
-const UserImgHeader = () => (
-  <View style={styles.userImgHeaderView}>
-    <Image
-      style={styles.userImgHeader}
-      source={require("./assets/img/bx-user-circle.svg")}
-    />
-  </View>
 );
 
 class TopView extends React.Component {
@@ -71,47 +57,30 @@ class TopView extends React.Component {
           {/* <View style={styles.empty} /> */}
           <View style={styles.daoheaderlinks}>
             <DAOHeaderLink text={"About us"} onPress={this.props.aboutUsMove} />
-
             <DAOHeaderLink text={"Tutoring"} onPress={this.props.tutorMove} />
-
             <DAOHeaderLink
               text={"Contact Us"}
               onPress={() => this.contactUsPressed}
             />
-            <View style={styles.userImgHeaderView}>
-              <Menu
-                name="menu"
-                onSelect={(value) => alert(`Selected number: ${value}`)}
+            <TouchableOpacity
+              style={styles.aboutUsNoHoverView}
+              //onPress={() => Linking.openURL("http://google.com")}
+            >
+              <Text
+                accessibilityRole="link"
+                href="https://docs.google.com/forms/d/e/1FAIpQLScxvms5SHTcYfL1uCPxVdMO-YgqbXpgMg3lm-6WYasvdu5xQQ/viewform"
+                style={[styles.aboutUsNoHover, { color: "#e9b163" }]}
+                target="_blank"
               >
-                <MenuTrigger customStyles={triggerStyles}>
-                  <UserImgHeader />
-                </MenuTrigger>
-                <MenuOptions
-                  optionsContainerStyle={{ marginTop: 40, width: 80 }}
-                >
-                  <MenuOption value={1} text="My Account" />
-                  <MenuOption value={2}>
-                    <Text style={{ color: "red" }}></Text>
-                  </MenuOption>
-                  <MenuOption value={3} disabled={true} text="Three" />
-                </MenuOptions>
-              </Menu>
-            </View>
+                Sign Up!
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
     );
   }
 }
-
-const triggerStyles = {
-  triggerOuterWrapper: {
-    alignItems: "center",
-    justifyContent: "center",
-    flex: 1,
-    height: 100,
-  },
-};
 
 const styles = StyleSheet.create({
   container: {
@@ -157,7 +126,7 @@ const styles = StyleSheet.create({
   aboutUsHover: {
     fontFamily: "Manrope",
     fontWeight: 500,
-    fontSize: 20,
+    fontSize: 0.02 * windowwidth,
     color: "#dad5ff",
     //backgroundColor: "white",
     textAlign: "center",

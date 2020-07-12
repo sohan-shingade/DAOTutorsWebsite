@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
     margin: 25,
     padding: 25,
     backgroundColor: "#764ABC",
+    borderRadius: 50,
   },
   aboutUsText: {
     fontFamily: "Manrope",

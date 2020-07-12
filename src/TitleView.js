@@ -12,16 +12,11 @@ export default class TitleView extends React.Component {
   render() {
     console.log(Platform.OS);
     return (
-      <View style={styles.titleView}>
-        {Platform.OS === "web" ? (
-          <Text adjustsFontSizeToFit style={styles.titleText}>
-            Learn Programming for free!
-          </Text>
-        ) : (
-          <Text adjustsFontSizeToFit style={styles.titleText}>
-            PHONEBEANS
-          </Text>
-        )}
+      <View onMouseEnter={console.log("ENTERED")} style={styles.titleView}>
+        <Text adjustsFontSizeToFit style={styles.titleText}>
+          Learn Programming for free!
+        </Text>
+
         <Image
           style={styles.img}
           source={require("./assets/img/scene-one.svg")}
@@ -36,7 +31,7 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 25,
     padding: 25,
-
+    borderRadius: 50,
     backgroundColor: "white",
   },
   img: {
